@@ -1,0 +1,25 @@
+[workspace]
+members = ["vanadin-tasks"]
+resolver = "2"
+
+[workspace.dependencies]
+log = "0.4.20"
+simplelog = "0.12.1"
+
+[package]
+name = "vanadin"
+version = "0.1.0"
+description = "Blazingly fast building and testing framework."
+edition = "2021"
+authors = ["DraftedDev"]
+
+[[bin]]
+name = "vanadin"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.4.16", features = ["string"] }
+log = { workspace = true }
+toml = { version = "0.8.8", default-features = false, features = ["parse"] }
+simplelog = { workspace = true }
+vanadin-tasks = { path = "./vanadin-tasks" }
