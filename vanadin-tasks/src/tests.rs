@@ -3,6 +3,8 @@ use crate::task::Task;
 
 #[test]
 pub fn env_module() {
+    crate::utils::init_logger().unwrap_or(());
+
     TaskRunner::new().run(&Task {
         id: "Test env module".to_string(),
         about: "Tests the env module".to_string(),
@@ -10,12 +12,12 @@ pub fn env_module() {
 import { set, get, remove } from "env";
 
 // Test set and get of env variables
-set("FOO", "bar");
-assert(get("FOO") == "bar");
+set("MY_ENV", "hello");
+assert(get("MY_ENV") == "hello");
 
 // Test removing env variables
-remove("FOO");
-assert(get("FOO") == null);
+remove("MY_ENV");
+assert(get("MY_ENV") == null);
         "#.to_string(),
         pre_run: Vec::new(),
         post_run: Vec::new(),
@@ -24,6 +26,8 @@ assert(get("FOO") == null);
 
 #[test]
 pub fn fs_module() {
+    crate::utils::init_logger().unwrap_or(());
+
     TaskRunner::new().run(&Task {
         id: "Test fs module".to_string(),
         about: "Tests the fs module".to_string(),
@@ -44,6 +48,8 @@ removeFile("FS_MODULE_UNIT_TEST.txt");
 
 #[test]
 pub fn tasks() {
+    crate::utils::init_logger().unwrap_or(());
+
     TaskRunner::new().run(&Task {
         id: "Test Tasks".to_string(),
         about: "Tests if Tasks and post/pre runs work".to_string(),
@@ -81,6 +87,8 @@ assert(get("FOO") == null);
 #[test]
 #[should_panic]
 pub fn throw() {
+    crate::utils::init_logger().unwrap_or(());
+
     TaskRunner::new().run(&Task {
         id: "Test throw()".to_string(),
         about: "Tests if throw() works".to_string(),
