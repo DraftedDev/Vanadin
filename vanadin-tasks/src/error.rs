@@ -1,4 +1,4 @@
-use log::{debug, error, info, warn};
+use log::{debug, error, info};
 use rquickjs::{Ctx, Error};
 
 use crate::task::Task;
@@ -104,11 +104,10 @@ pub fn evaluate_result(result: Result<(), Error>, task: &Task, ctx: &Ctx) {
                 error!("An unknown error occurred: {err}");
             }
         }
-
-        warn!("Aborting due to error in Task '{}'", task.id);
-
         debug!("Raw error: {:#?}", err);
         debug!("Catch: {:#?}", catch);
+
+        error!("Finished Task '{}' => FAILURE", task.id);
 
         panic!("Exiting due to error in '{}'", task.id);
     } else {
