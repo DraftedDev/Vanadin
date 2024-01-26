@@ -4,8 +4,8 @@ use crate::task::Task;
 #[test]
 pub fn env_module() {
     TaskRunner::new().run(&Task {
-        id: "Test env module",
-        about: "Tests the env module",
+        id: "Test env module".to_string(),
+        about: "Tests the env module".to_string(),
         src: r#"
 import { set, get, remove } from "env";
 
@@ -16,17 +16,17 @@ assert(get("FOO") == "bar");
 // Test removing env variables
 remove("FOO");
 assert(get("FOO") == null);
-        "#,
-        pre_run: &[],
-        post_run: &[],
+        "#.to_string(),
+        pre_run: Vec::new(),
+        post_run: Vec::new(),
     });
 }
 
 #[test]
 pub fn fs_module() {
     TaskRunner::new().run(&Task {
-        id: "Test fs module",
-        about: "Tests the fs module",
+        id: "Test fs module".to_string(),
+        about: "Tests the fs module".to_string(),
         src: r#"
 import { readFile, writeFile, createFile, removeFile, createDir, removeDir, exists } from "fs";
 
@@ -36,17 +36,17 @@ writeFile("FS_MODULE_UNIT_TEST.txt", "hello world!");
 assert(readFile("FS_MODULE_UNIT_TEST.txt") == "hello world!");
 assert(exists("FS_MODULE_UNIT_TEST.txt") == true);
 removeFile("FS_MODULE_UNIT_TEST.txt");
-        "#,
-        pre_run: &[],
-        post_run: &[],
+        "#.to_string(),
+        pre_run: Vec::new(),
+        post_run: Vec::new(),
     });
 }
 
 #[test]
 pub fn tasks() {
     TaskRunner::new().run(&Task {
-        id: "Test Tasks",
-        about: "Tests if Tasks and post/pre runs work",
+        id: "Test Tasks".to_string(),
+        about: "Tests if Tasks and post/pre runs work".to_string(),
         src: r#"
 import { get, remove } from "env";
 assert(get("FOO") == "bar");
@@ -54,26 +54,26 @@ remove("FOO");
 
 assert(ID == "Test Tasks");
 assert(ABOUT == "Tests if Tasks and post/pre runs work");
-        "#,
-        pre_run: &[Task {
-            id: "Set FOO",
-            about: "Sets FOO",
+        "#.to_string(),
+        pre_run: vec![Task {
+            id: "Set FOO".to_string(),
+            about: "Sets FOO".to_string(),
             src: r#"
 import { set } from "env";
 set("FOO", "bar");
-                "#,
-            pre_run: &[],
-            post_run: &[],
+                "#.to_string(),
+            pre_run: Vec::new(),
+            post_run: Vec::new(),
         }],
-        post_run: &[Task {
-            id: "Get FOO",
-            about: "Gets FOO",
+        post_run: vec![Task {
+            id: "Get FOO".to_string(),
+            about: "Gets FOO".to_string(),
             src: r#"
 import { get } from "env";
 assert(get("FOO") == null);
-                "#,
-            pre_run: &[],
-            post_run: &[],
+                "#.to_string(),
+            pre_run: Vec::new(),
+            post_run: Vec::new(),
         }],
     });
 }
@@ -82,12 +82,12 @@ assert(get("FOO") == null);
 #[should_panic]
 pub fn throw() {
     TaskRunner::new().run(&Task {
-        id: "Test throw()",
-        about: "Tests if throw() works",
+        id: "Test throw()".to_string(),
+        about: "Tests if throw() works".to_string(),
         src: r#"
 throw("This is a test throw()");
-        "#,
-        pre_run: &[],
-        post_run: &[],
+        "#.to_string(),
+        pre_run: Vec::new(),
+        post_run: Vec::new(),
     });
 }
