@@ -1,8 +1,11 @@
 on:
   push:
-    # Pattern matched against refs/tags
     tags:
-      - 'v*'           # Push events to every tag not containing /
+      - 'v*'
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
 
 name: Release
 
