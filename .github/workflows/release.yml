@@ -34,4 +34,6 @@ jobs:
             --workspace \
             --execute \
             --no-confirm \
-            --dependent-version upgrade \
+            --unpublished \
+            --dependent-version fix \
+          
