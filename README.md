@@ -20,4 +20,4 @@ The default script location is `.vanadin/tasks/...`, so it's good practice to be
 
 ## Documentation
 
-If you installed and started working with Vanadin, you may want to check out the official Vanadin Online Book.
+If you installed and started working with Vanadin, you may want to check out the official [Vanadin Online Book](https://drafteddev.github.io/Vanadin/).
