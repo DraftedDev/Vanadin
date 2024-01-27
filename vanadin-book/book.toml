@@ -1,0 +1,6 @@
+[book]
+authors = ["DraftedDev"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Official Vanadin Book"
