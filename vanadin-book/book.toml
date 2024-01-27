@@ -4,3 +4,4 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Official Vanadin Book"
+description = "Official Documentation & Tutorial Book for the Vanadin Build Tool"
