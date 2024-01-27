@@ -12,6 +12,12 @@ version = "0.1.0"
 description = "Blazingly fast building and testing framework."
 edition = "2021"
 authors = ["DraftedDev"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/DraftedDev/vanadin"
+documentation = "https://docs.rs/vanadin"
+keywords = ["build", "testing", "automation", "testing", "cli"]
+categories = ["command-line-utilities", "development-tools", "development-tools::testing"]
 
 [[bin]]
 name = "vanadin"
