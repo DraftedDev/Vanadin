@@ -30,7 +30,7 @@ jobs:
 
       - name: Release
         run: |
-          cargo release release \
+          cargo release \
             --workspace \
             --execute \
             --no-confirm \
