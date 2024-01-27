@@ -2,6 +2,7 @@
 name = "vanadin-tasks"
 version = "0.1.0"
 edition = "2021"
+description = "Used by the vanadin project"
 license = "MIT"
 documentation = "https://docs.rs/vanadin-tasks"
 homepage = "https://github.com/vanadis-rs/vanadis"
