@@ -35,4 +35,5 @@ jobs:
             --execute \
             --no-confirm \
             --dependent-version fix \
+            --no-tag \
           

@@ -28,4 +28,4 @@ clap = { version = "4.4.16", features = ["string"] }
 log = { workspace = true }
 toml = { version = "0.8.8", default-features = false, features = ["parse"] }
 simplelog = { workspace = true }
-vanadin-tasks = { path = "./vanadin-tasks" }
+vanadin-tasks = "0.1.0"
