@@ -18,7 +18,8 @@ assert(get("MY_ENV") == "hello");
 // Test removing env variables
 remove("MY_ENV");
 assert(get("MY_ENV") == null);
-        "#.to_string(),
+        "#
+        .to_string(),
         pre_run: Vec::new(),
         post_run: Vec::new(),
     });
@@ -40,7 +41,8 @@ writeFile("FS_MODULE_UNIT_TEST.txt", "hello world!");
 assert(readFile("FS_MODULE_UNIT_TEST.txt") == "hello world!");
 assert(exists("FS_MODULE_UNIT_TEST.txt") == true);
 removeFile("FS_MODULE_UNIT_TEST.txt");
-        "#.to_string(),
+        "#
+        .to_string(),
         pre_run: Vec::new(),
         post_run: Vec::new(),
     });
@@ -60,14 +62,16 @@ remove("FOO");
 
 assert(ID == "Test Tasks");
 assert(ABOUT == "Tests if Tasks and post/pre runs work");
-        "#.to_string(),
+        "#
+        .to_string(),
         pre_run: vec![Task {
             id: "Set FOO".to_string(),
             about: "Sets FOO".to_string(),
             src: r#"
 import { set } from "env";
 set("FOO", "bar");
-                "#.to_string(),
+                "#
+            .to_string(),
             pre_run: Vec::new(),
             post_run: Vec::new(),
         }],
@@ -77,7 +81,8 @@ set("FOO", "bar");
             src: r#"
 import { get } from "env";
 assert(get("FOO") == null);
-                "#.to_string(),
+                "#
+            .to_string(),
             pre_run: Vec::new(),
             post_run: Vec::new(),
         }],
@@ -94,7 +99,8 @@ pub fn throw() {
         about: "Tests if throw() works".to_string(),
         src: r#"
 throw("This is a test throw()");
-        "#.to_string(),
+        "#
+        .to_string(),
         pre_run: Vec::new(),
         post_run: Vec::new(),
     });
