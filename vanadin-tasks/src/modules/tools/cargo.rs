@@ -61,8 +61,14 @@ impl Module {
     }
 
     #[inline(always)]
-    fn test(test: String) -> Option<i32> {
-        std::process::Command::new(format!("cargo test --nocapture --test {}", test))
+    fn test(test: Option<String>) -> Option<i32> {
+        std::process::Command::new(
+            if let Some(test) = test {
+                format!("cargo test --test {}", test)
+            } else {
+                "cargo test".to_string()
+            },
+        )
             .spawn()
             .ok()?
             .wait()
