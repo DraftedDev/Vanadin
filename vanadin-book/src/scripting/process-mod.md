@@ -5,7 +5,7 @@ The `process` module provides useful functions for spawning processes, running c
 To import the `process` module, use the `import` keyword:
 
 ```js
-import { cmd } from 'process';
+import { cmd, ... } from 'process';
 ```
 
 ## Functions

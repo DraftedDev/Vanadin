@@ -5,7 +5,7 @@ The `tools/node` module provides useful functions for working with [Node.js](htt
 Import it with:
 
 ```js
-import { run } from "tools/node";
+import { run, ... } from "tools/node";
 ```
 
 ## Functions

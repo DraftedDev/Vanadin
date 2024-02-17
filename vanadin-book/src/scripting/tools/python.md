@@ -5,7 +5,7 @@ The `tools/python` module provides useful functions for working with [Python](ht
 Import it with:
 
 ```js
-import { run } from "tools/python";
+import { run, ... } from "tools/python";
 ```
 
 ## Functions

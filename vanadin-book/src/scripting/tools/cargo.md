@@ -5,7 +5,7 @@ The `tools/cargo` module provides useful functions for working with [Rust & Carg
 Import it with:
 
 ```js
-import { run } from "tools/cargo";
+import { run, ... } from "tools/cargo";
 ```
 
 ## Functions
@@ -32,7 +32,7 @@ Executes `cargo build` and returns the exit code if given, otherwise `null`.
 
 ### `test(test)`
 
-Executes `cargo test --test <test>` or `cargo test` if no test is given and returns the exit code if given, otherwise `null`.
+Executes `cargo test --test <test>` or `cargo test` if no test is given and returns the exit code if there is one, otherwise `null`.
 
 ---
 
