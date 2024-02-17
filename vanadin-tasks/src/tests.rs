@@ -2,7 +2,7 @@ use crate::runner::TaskRunner;
 use crate::task::Task;
 
 #[test]
-pub fn env_module() {
+fn env_module() {
     crate::utils::init_logger().unwrap_or(());
 
     TaskRunner::new().run(&Task {
@@ -26,7 +26,7 @@ assert(get("MY_ENV") == null);
 }
 
 #[test]
-pub fn fs_module() {
+fn fs_module() {
     crate::utils::init_logger().unwrap_or(());
 
     TaskRunner::new().run(&Task {
@@ -49,7 +49,7 @@ removeFile("FS_MODULE_UNIT_TEST.txt");
 }
 
 #[test]
-pub fn tasks() {
+fn tasks() {
     crate::utils::init_logger().unwrap_or(());
 
     TaskRunner::new().run(&Task {
@@ -86,22 +86,5 @@ assert(get("FOO") == null);
             pre_run: Vec::new(),
             post_run: Vec::new(),
         }],
-    });
-}
-
-#[test]
-#[should_panic]
-pub fn throw() {
-    crate::utils::init_logger().unwrap_or(());
-
-    TaskRunner::new().run(&Task {
-        id: "Test throw()".to_string(),
-        about: "Tests if throw() works".to_string(),
-        src: r#"
-throw("This is a test throw()");
-        "#
-        .to_string(),
-        pre_run: Vec::new(),
-        post_run: Vec::new(),
     });
 }

@@ -1,5 +1,4 @@
 use clap::ArgMatches;
-
 use vanadin_tasks::runner::TaskRunner;
 
 use crate::vanadir::VanadinConfig;

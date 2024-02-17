@@ -2,7 +2,6 @@ use std::fs;
 use std::path::PathBuf;
 
 use toml::{Table, Value};
-
 use vanadin_tasks::task::Task;
 
 pub const VANADIR: &str = ".vanadin";
