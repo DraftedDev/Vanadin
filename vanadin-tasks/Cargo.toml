@@ -9,6 +9,7 @@ homepage = "https://github.com/vanadis-rs/vanadis"
 repository = "https://github.com/vanadis-rs/vanadis"
 
 [dependencies]
+rquickjs = { version = "0.5.0", features = ["loader", "dyn-load"] }
 
 log = { workspace = true }
 simplelog = { workspace = true }
