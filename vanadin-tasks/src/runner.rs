@@ -26,6 +26,7 @@ impl TaskRunner {
                 .with_module("log")
                 .with_module("fs")
                 .with_module("sys")
+                .with_module("http")
                 .with_module("tools/node")
                 .with_module("tools/python")
                 .with_module("tools/cargo"),
@@ -41,6 +42,7 @@ impl TaskRunner {
                 .with_module("log", modules::log::Module)
                 .with_module("fs", modules::fs::Module)
                 .with_module("sys", modules::sys::Module)
+                .with_module("http", modules::http::Module)
                 .with_module("tools/node", modules::tools::node::Module)
                 .with_module("tools/python", modules::tools::python::Module)
                 .with_module("tools/cargo", modules::tools::cargo::Module),

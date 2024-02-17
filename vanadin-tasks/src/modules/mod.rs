@@ -1,6 +1,7 @@
 pub mod env;
 pub mod fs;
 pub mod globals;
+pub mod http;
 pub mod log;
 pub mod math;
 pub mod process;
